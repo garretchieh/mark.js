@@ -130,9 +130,7 @@ $(function() {
     // the current index of the focused element
     currentIndex = 0;
 
-  /**
-   * Jumps to the element matching the currentIndex
-   */
+
   function jumpTo() {
     if ($results.length) {
       var position,
@@ -146,10 +144,7 @@ $(function() {
     }
   }
 
-  /**
-   * Searches for the entered keyword in the
-   * specified context on input
-   */
+
   $input.on("input", function() {
   	var searchVal = this.value;
     $content.unmark({
@@ -166,17 +161,12 @@ $(function() {
     });
   });
 
-  /**
-   * Clears the search
-   */
+
   $clearBtn.on("click", function() {
     $content.unmark();
     $input.val("").focus();
   });
 
-  /**
-   * Next and previous search jump to
-   */
   $nextBtn.add($prevBtn).on("click", function() {
     if ($results.length) {
       currentIndex += $(this).is($prevBtn) ? -1 : 1;
